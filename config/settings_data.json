@@ -328,7 +328,7 @@
           "1630529828b361838b-3"
         ],
         "settings": {
-          "title": "Logo list"
+          "title": "- 12 PACK FLAVORS -"
         }
       },
       "cart-template": {
@@ -336,6 +336,42 @@
         "settings": {
           "cart_ajax_enable": true,
           "cart_notes_enable": false
+        }
+      },
+      "new_section": {
+        "type": "new_section",
+        "blocks": {
+          "c086eec4-b653-4a83-af56-4b9958fc254e": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/angled-view-of-typewriter-with-black-lives-matter.jpg"
+            }
+          },
+          "06202062-b1e6-4d4f-855a-2fd9c35d6761": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/paved-highway-in-USA.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "c086eec4-b653-4a83-af56-4b9958fc254e",
+          "06202062-b1e6-4d4f-855a-2fd9c35d6761"
+        ],
+        "settings": {
+          "checkbox": true,
+          "heading": "New Heading",
+          "description": "<p>New Description<\/p>",
+          "home_welcome_message": "Welcome to my shop!"
+        }
+      },
+      "163069484759a3de3d": {
+        "type": "new_section",
+        "settings": {
+          "checkbox": true,
+          "heading": "",
+          "description": "",
+          "home_welcome_message": "Welcome to my shop!"
         }
       }
     },
@@ -347,7 +383,8 @@
       "1630527048d1de927f",
       "1630527216b9c44194",
       "1630527221881d5ede",
-      "1630527224957ced84"
+      "1630527224957ced84",
+      "163069484759a3de3d"
     ]
   },
   "presets": {

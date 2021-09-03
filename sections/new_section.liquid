@@ -1,0 +1,53 @@
+<h2 >{{ section.settings.heading }}</h2>
+<h2 >{{ section.settings.description }}</h2>
+<p >{{ section.settings.home_welcome_message }}</p>
+
+{% for block in section.blocks %}
+	{% if block.settings.image != blank %}
+		<img src="{{ block.settings.image | img_url:'master' }}">
+	{%endif%}
+{% endfor %}
+
+
+
+{% schema %}
+{
+	"name" : "New Page Created",
+	"settings": [{
+			"type": "checkbox",
+			"id": "checkbox",
+			"label": "Show announcement",
+			"default": true
+		},
+		{
+			"type": "text",
+			"label": "Heading",
+			"id": "heading"
+		},
+		{
+			"type": "richtext",
+			"label": "Description",
+			"id": "description"
+		},
+		{
+			"type": "textarea",
+			"id": "home_welcome_message",
+			"label": "Welcome message",
+			"default": "Welcome to my shop!"
+		}
+	],
+	"blocks": [{
+		"type": "image",
+		"name": "image",
+		"settings": [{
+			"type": "image_picker",
+			"label": "Pick Image",
+			"id": "image"
+		}]
+	}],
+	"presets": [{
+		"category": "image",
+		"name": "image"
+	}]
+}
+{% endschema %}
