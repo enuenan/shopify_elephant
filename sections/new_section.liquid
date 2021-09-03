@@ -1,6 +1,26 @@
-<h2 >{{ section.settings.heading }}</h2>
-<h2 >{{ section.settings.description }}</h2>
-<p >{{ section.settings.home_welcome_message }}</p>
+<style>
+	.align1{
+		text-align: {{ section.settings.alignment }};
+		font-size: {{ section.settings.font_size }}px;
+	}
+	.bg_color{ 
+		background-color: {{ section.settings.announce_color }};
+		color: #fff;
+		text-align: center;
+		font-size: 35px;
+		font-family: '{{ section.settings.announce_font }}';
+	 }
+</style>
+
+{% if section.settings.checkbox == true %}
+<marquee width="100%" direction="left" height="50px" class="bg_color">
+	This is a sample scrolling text that has scrolls texts to left and this is  an announcement.
+</marquee>
+{% endif %}
+
+<h2 class="align1">{{ section.settings.heading }}</h2>
+<h2>{{ section.settings.description }}</h2>
+<p>{{ section.settings.home_welcome_message }}</p>
 
 {% for block in section.blocks %}
 	{% if block.settings.image != blank %}
@@ -8,16 +28,61 @@
 	{%endif%}
 {% endfor %}
 
-
+{% if section.settings.page1.content %}
+	<a href="{{ section.settings.page1.url  }}">go to page</a>
+	{{ section.settings.page1.content }}
+{% endif %}
 
 {% schema %}
 {
-	"name" : "New Page Created",
+	"name": "New Page Created",
+	"max_blocks": 2,
 	"settings": [{
+			"type": "radio",
+			"id": "alignment",
+			"label": "Heading alignment",
+			"options": [{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Centered"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"default": "left"
+		},
+		{
+			"type": "range",
+			"id": "font_size",
+			"min": 12,
+			"max": 30,
+			"step": 1,
+			"unit": "px",
+			"label": "Font size",
+			"default": 14
+		},
+		{
 			"type": "checkbox",
 			"id": "checkbox",
 			"label": "Show announcement",
 			"default": true
+		},
+		{
+			"type": "color",
+			"id": "announce_color",
+			"label": "Announcement background color",
+			"default": "#829fc3"
+		},
+		{
+			"type": "font_picker",
+			"id": "announce_font",
+			"label": "Announcement font",
+			"default": "helvetica_n4"
 		},
 		{
 			"type": "text",
@@ -34,6 +99,35 @@
 			"id": "home_welcome_message",
 			"label": "Welcome message",
 			"default": "Welcome to my shop!"
+		},
+		{
+			"type": "select",
+			"id": "alignment1",
+			"label": "Vertical alignment",
+			"options": [{
+					"value": "top",
+					"label": "Top"
+				},
+				{
+					"value": "middle",
+					"label": "Middle"
+				},
+				{
+					"value": "bottom",
+					"label": "Bottom"
+				}
+			],
+			"default": "middle"
+		},
+		{
+			"type": "article",
+			"id": "featured_article",
+			"label": "Featured article"
+		},
+		{
+			"type": "page",
+			"id": "page1",
+			"label": "Select a page to show."
 		}
 	],
 	"blocks": [{

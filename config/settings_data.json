@@ -359,19 +359,17 @@
           "06202062-b1e6-4d4f-855a-2fd9c35d6761"
         ],
         "settings": {
+          "alignment": "center",
+          "font_size": 12,
           "checkbox": true,
+          "announce_color": "#4c9370",
+          "announce_font": "helvetica_n4",
           "heading": "New Heading",
           "description": "<p>New Description<\/p>",
-          "home_welcome_message": "Welcome to my shop!"
-        }
-      },
-      "163069484759a3de3d": {
-        "type": "new_section",
-        "settings": {
-          "checkbox": true,
-          "heading": "",
-          "description": "",
-          "home_welcome_message": "Welcome to my shop!"
+          "home_welcome_message": "Welcome to my shop!",
+          "alignment1": "top",
+          "featured_article": "",
+          "page1": ""
         }
       }
     },
@@ -383,8 +381,7 @@
       "1630527048d1de927f",
       "1630527216b9c44194",
       "1630527221881d5ede",
-      "1630527224957ced84",
-      "163069484759a3de3d"
+      "1630527224957ced84"
     ]
   },
   "presets": {
